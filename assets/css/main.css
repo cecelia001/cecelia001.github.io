@@ -2135,7 +2135,7 @@ input, select, textarea {
 
 /* Header */
 
-	#logo {
+	/* #logo {
 		position: absolute;
 		z-index: 1;
 		top: 0;
@@ -2161,7 +2161,7 @@ input, select, textarea {
 			letter-spacing: 3px;
 			text-align: center;
 			text-transform: uppercase;
-		}
+		} */
 
 	#nav {
 		text-align: center;
@@ -3023,13 +3023,13 @@ input, select, textarea {
 
 		/* Header */
 
-			#logo {
+			/* #logo {
 				position: relative;
 				left: 0;
 				top: 0;
 				margin: 0;
 				width: 100%;
-			}
+			} */
 
 		/* Hero */
 
@@ -3074,3 +3074,7 @@ input, select, textarea {
 
 	#more {display: none;}
 	#more2 {display: none;}
+
+	#promo h2 {
+		font-family: cursive;
+	}
