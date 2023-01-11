@@ -83,9 +83,7 @@
 								am looking foward to as I continue my journey into tech...I can keep learning new things every day!
 								</span></p>
 								<button onclick="expandMore()" class="button" id="myBtn">Read more</button>
-								<!-- <ul class="actions">
-									<li><a href="#" class="button">Elevate my awareness</a></li>
-								</ul> -->
+			
 							</section>
 							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper">
@@ -94,9 +92,16 @@
 								<header>
 									<h2>Break Into Tech</h2>
 								</header>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
-								sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
-								adipiscing elit. Curabitur vel sem sit.</p>
+								<p> I will admit, I did not know what I was getting myself into. I had taken free HTML/CSS courses online. I had even experimented with a little Python.
+								I was very used to being good at everything I did. Well, let's just say that was not the case at first. I was lost and confused and thinking I had made 
+								a big mistake. I remember hearing this at orientation, "Be brave enough to suck at
+								<span id="dots2">...</span>
+								<span id="more2"> something new." And that fueled me for the first couple of weeks. However, no matter how overwhelmed I felt at the end of each day. I was still excited
+								and ready to take it all on again the next day. Those next weeks flew by and at the end of the bootcamp, I was left wanting more. I am so glad I made the jump
+								and am ready to start my new role as a Software Engineer and keep learning new skills everyday.
+								</span></p>
+								<button onclick="expandMore2()" class="button" id="myBtn2">Read more</button>
+								
 								<!-- <ul class="actions">
 									<li><a href="#" class="button">Elevate my awareness</a></li>
 								</ul> -->
@@ -232,6 +237,22 @@
 					dots.style.display = "none";
 					btnText.innerHTML = "Read less"; 
 					moreText.style.display = "inline";
+				}
+				}
+
+				function expandMore2() {
+				var dots2 = document.getElementById("dots2");
+				var moreText2 = document.getElementById("more2");
+				var btnText2 = document.getElementById("myBtn2");
+
+				if (dots2.style.display === "none") {
+					dots2.style.display = "inline";
+					btnText2.innerHTML = "Read more"; 
+					moreText2.style.display = "none";
+				} else {
+					dots2.style.display = "none";
+					btnText2.innerHTML = "Read less"; 
+					moreText2.style.display = "inline";
 				}
 				}
 			</script>
