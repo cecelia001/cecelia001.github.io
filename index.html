@@ -69,12 +69,23 @@
 								<header>
 									<h2>My Story</h2>
 								</header>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
-								sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
-								adipiscing elit. Curabitur vel sem sit.</p>
-								<ul class="actions">
+								<p>Ever since I was a kid, I've always wanted to be a teacher, or so I thought. I enjoyed learning and teaching others what I knew.
+								After a few years in a classroom teaching children, I felt stagnant. I wanted to keep learning new things, so I took an interest in 
+								money management and taught myself the ins and outs of the finance world. I passed the dreaded FINRA certifications and 
+								<span id="dots">...</span>
+								<span id="more"> became a financial
+								advisor. After a few years, I found myself wanting to be apart of a team again and collaborating with others. I took a job as a Children's Librarian,
+								with my background in education . I quickly became the head of the department and moved to a larger library with a bigger staff. As part of my job, I 
+								created programs for children/teens. I've always had an interest in tech and created a coding program at my library, using Google's CS First program as 
+								a guide. After that, I continued to offer coding programs and fell in love with coding and all that it offered. I decided to take a leap of faith 
+								and enroll myself in a 3 month intesive Full Stack Development Bootcamp. Based out of Spain and working remotely, I woke up every day at 2am to join my online
+								cohort at 9am Barcelona time. I never missed a day or dreaded waking up those early mornings because I was excited and ready to learn something new. Something I 
+								am looking foward to as I continue my journey into tech...I can keep learning new things every day!
+								</span></p>
+								<button onclick="expandMore()" class="button" id="myBtn">Read more</button>
+								<!-- <ul class="actions">
 									<li><a href="#" class="button">Elevate my awareness</a></li>
-								</ul>
+								</ul> -->
 							</section>
 							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper">
@@ -86,9 +97,9 @@
 								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
 								sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
 								adipiscing elit. Curabitur vel sem sit.</p>
-								<ul class="actions">
+								<!-- <ul class="actions">
 									<li><a href="#" class="button">Elevate my awareness</a></li>
-								</ul>
+								</ul> -->
 							</section>
 						</div>
 					</div>
@@ -207,5 +218,22 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				function expandMore() {
+				var dots = document.getElementById("dots");
+				var moreText = document.getElementById("more");
+				var btnText = document.getElementById("myBtn");
+
+				if (dots.style.display === "none") {
+					dots.style.display = "inline";
+					btnText.innerHTML = "Read more"; 
+					moreText.style.display = "none";
+				} else {
+					dots.style.display = "none";
+					btnText.innerHTML = "Read less"; 
+					moreText.style.display = "inline";
+				}
+				}
+			</script>
 	</body>
 </html>

@@ -3071,3 +3071,5 @@ input, select, textarea {
 	#footer p{
 		color:white;
 	}
+
+	#more {display: none;}
