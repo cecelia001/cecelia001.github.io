@@ -6,228 +6,217 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
+	<body class="is-preload">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div id="header" class="container">
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="#aboutme">My Story</a> </li>
-                                    <li><a href="#projects">Projects</a></li>
-									<li><a href="Cecelia Fowler CV.pdf">Resume</a></li>
-									<li><a href="#footer">Contact</a></li>
-								
-								</ul>
-							</nav>
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Solid State</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
 
-					</div>
-
-					<!-- Hero -->
-						<section id="hero" class="container">
-							<header>
-								<h2>Cecelia Fowler</h2>
-							</header>
-							<p>Full Stack Developer...this is still a work in progress.</p>
-							<ul class="actions">
-								<li><a href="Cecelia Fowler CV.pdf" download="CeceliaFowlerCV" class="button">Get Resume</a></li>
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class = "links">
+								<li><a href="#aboutme">My Story</a> </li>
+								<li><a href="#projects">Projects</a></li>
+								<li><a href="Cecelia Fowler CV.pdf">Resume</a></li>
+								<li><a href="#footer">Contact</a></li>
+							
 							</ul>
-						</section>
-
-				</div>
-
-			<!-- Features 1 -->
-				<div class="wrapper">
-					<div class="container">
-						<div class="row">
-							<section id="aboutme" class="col-6 col-12-narrower feature">
-								<div class="image-wrapper first">
-									<a href="#" class="image featured first"><img src="images/book.webp" alt="" /></a>
-								</div>
-								<header>
-									<h2>My Story</h2>
-								</header>
-								<p>Ever since I was a kid, I've always wanted to be a teacher, or so I thought. I enjoyed learning and teaching others what I knew.
-								After a few years in a classroom teaching children, I felt stagnant. I wanted to keep learning new things, so I took an interest in 
-								money management and taught myself the ins and outs of the finance world. I passed the dreaded FINRA certifications and 
-								<span id="dots">...</span>
-								<span id="more"> became a financial
-								advisor. After a few years, I found myself wanting to be apart of a team again and collaborating with others. I took a job as a Children's Librarian,
-								with my background in education . I quickly became the head of the department and moved to a larger library with a bigger staff. As part of my job, I 
-								created programs for children/teens. I've always had an interest in tech and created a coding program at my library, using Google's CS First program as 
-								a guide. After that, I continued to offer coding programs and fell in love with coding and all that it offered. I decided to take a leap of faith 
-								and enroll myself in a 3 month intesive Full Stack Development Bootcamp. Based out of Spain and working remotely, I woke up every day at 2am to join my online
-								cohort at 9am Barcelona time. I never missed a day or dreaded waking up those early mornings because I was excited and ready to learn something new. Something I 
-								am looking foward to as I continue my journey into tech...I can keep learning new things every day!
-								</span></p>
-								<button onclick="expandMore()" class="button" id="myBtn">Read more</button>
-							</section>
-
-							<section class="col-6 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/laptop.png" alt="" /></a>
-								</div>
-								<header>
-									<h2>Break Into Tech</h2>
-								</header>
-								<p> I will admit, I did not know what I was getting myself into. I had taken free HTML/CSS courses online. I had even experimented with a little Python.
-								I was very used to being good at everything I did. Well, let's just say that was not the case at first. I was lost and confused and thinking I had made 
-								a big mistake. I remember hearing this at orientation, "Be brave enough to suck at
-								<span id="dots2">...</span>
-								<span id="more2"> something new." And that fueled me for the first couple of weeks. However, no matter how overwhelmed I felt at the end of each day. I was still excited
-								and ready to take it all on again the next day. Those next weeks flew by and at the end of the bootcamp, I was left wanting more. I am so glad I made the jump
-								and am ready to start my new role as a Software Engineer and keep learning new skills everyday.
-								</span></p>
-								<button onclick="expandMore2()" class="button" id="myBtn2">Read more</button>
-							</section>
-
+							<a href="#" class="close">Close</a>
 						</div>
-					</div>
-				</div>
+					</nav>
 
-
-			<!-- Features 2 -->
-				<div class="wrapper">
-					<section id="projects" class="container">
-						<header class="major">
-							<h2>Projects</h2>
-							<p>Some examples: group project, feature extension on legacy code and an MVP.</p>
-						</header>
-						<div class="row features">
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<img src="images/RSD.png" alt="" />
-								</div>
-								<p> Worked with an international team to create a full stack app with authorization and 3rd party API integration. 
-									Ready Set Drive creates a social platform for users to plan and share their roadtrips with others. 
-								</br> Built with: JavaScript, React, NodeJS/Express, REST API, MySQL, Open Cage API, Bootstrap</p>
-								<ul class="actions major">
-									<li><a href="https://github.com/CodeOp-tech/ReadySetDrive" class="button">Check out the code</a></li>
-								</ul>
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<img src="images/focus.png" alt="" />
-								</div>
-								<p> Inherited legacy code to implement
-									authentication and authorization, allowing
- 									for user registration and login. FocusON uses a promodoro tracker to help users set and focus on daily tasks.
-								</br>Built with: JSON Web Token, Bcrypt,
-									JavaScript, React, NodeJS/Express, MySQL, Chakra UI</p>
-								<ul class="actions major">
-									<li><a href="https://github.com/cecelia001/focus-on" class="button">Check out the code</a></li>
-								</ul>
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<img src="images/myChange.png" alt="" />
-								</div>
-								<p>Full stack MVP app with MySQL database and RESTful APIs. First full stack app, starting from the ground up.
-									 MyChange allows users to track monthly expenses and set individualized budgets for a variety of categories.
-								</br>Built with: JavaScript, React, Bootstrap,
-									NodeJS/Express, MySQL, REST API
-									</p>
-								<ul class="actions major">
-									<li><a href="https://github.com/cecelia001/mychange" class="button">Check out the code</a></li>
-								</ul>
-							</section>
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-gem"></span></div>
+							<h2>This is Solid State</h2>
+							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
 						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/book.webp" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Magna arcu feugiat</h2>
+										<p>Ever since I was a kid, I've always wanted to be a teacher, or so I thought. I enjoyed learning and teaching others what I knew.
+											After a few years in a classroom teaching children, I felt stagnant. I wanted to keep learning new things, so I took an interest in 
+											money management and taught myself the ins and outs of the finance world. I passed the dreaded FINRA certifications and became a financial
+											advisor. After a few years, I found myself wanting to be apart of a team again and collaborating with others. I took a job as a Children's Librarian,
+											with my background in education . I quickly became the head of the department and moved to a larger library with a bigger staff. As part of my job, I 
+											created programs for children/teens. I've always had an interest in tech and created a coding program at my library, using Google's CS First program as 
+											a guide. After that, I continued to offer coding programs and fell in love with coding and all that it offered. I decided to take a leap of faith 
+											and enroll myself in a 3 month intesive Full Stack Development Bootcamp. Based out of Spain and working remotely, I woke up every day at 2am to join my online
+											cohort at 9am Barcelona time. I never missed a day or dreaded waking up those early mornings because I was excited and ready to learn something new. Something I 
+											am looking foward to as I continue my journey into tech...I can keep learning new things every day!
+											</span></p>
+										<a href="#" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/laptop.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Tempus adipiscing</h2>
+										<p> I will admit, I did not know what I was getting myself into. I had taken free HTML/CSS courses online. I had even experimented with a little Python. 
+											I was accustomed to excelling in my professional life. Well, let's just say that was not the case at first. I was taken aback when I was initially lost 
+											and uncertain. At orientation, I heard something that motivated me to press on: "Be brave enough to be bad at something new." That fueled me for the first couple of weeks. Despite feeling overwhelmed at the 
+											end of each day, I was still excited and ready to take it all on again the next day. Those next weeks flew by and before I knew it, my  bootcamp had ended 
+											and, I was left wanting more. I am so glad I made the jump and am ready to start my new role as a Software Engineer and keep learning new skills everyday.
+										</span></p>
+										<a href="#" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<!-- <section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Nullam dignissim</h2>
+										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+										<a href="#" class="special">Learn more</a>
+									</div>
+								</div>
+							</section> -->
+
+						<!-- Four -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Projects</h2>
+									<p>Some projects</p>
+									<section class="features">
+										<article>
+											<a href="#" class="image"><img src="images/RSD.png" alt="" /></a>
+											<h3 class="major">Sed feugiat lorem</h3>
+											<p>Worked with an international team to create a full stack app with authorization and 3rd party API integration. 
+												Ready Set Drive creates a social platform for users to plan and share their roadtrips with others. 
+											</br> Built with: JavaScript, React, NodeJS/Express, REST API, MySQL, Open Cage API, Bootstrap</p>
+											<a href="https://github.com/CodeOp-tech/ReadySetDrive" class="button">Check out the code</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/focus.png" alt="" /></a>
+											<h3 class="major">Nisl placerat</h3>
+											<p> Inherited legacy code to implement
+												authentication and authorization, allowing
+												 for user registration and login. FocusON uses a promodoro tracker to help users set and focus on daily tasks.
+											</br>Built with: JSON Web Token, Bcrypt,
+												JavaScript, React, NodeJS/Express, MySQL, Chakra UI</p>
+												<a href="https://github.com/cecelia001/focus-on" class="button">Check out the code</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/myChange.png" alt="" /></a>
+											<h3 class="major">Ante fermentum</h3>
+											<p>Full stack MVP app with MySQL database and RESTful APIs. First full stack app, starting from the ground up.
+												MyChange allows users to track monthly expenses and set individualized budgets for a variety of categories.
+										   </br>Built with: JavaScript, React, Bootstrap,
+											   NodeJS/Express, MySQL, REST API
+											   </p>
+											   <a href="https://github.com/cecelia001/mychange" class="button">Check out the code</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<h3 class="major">Fusce consequat</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+											<a href="https://github.com/cecelia001/mychange" class="button">Check out the code</a>
+										</article>
+									</section>
+									<ul class="actions">
+										<li><a href="#" class="button">Browse All</a></li>
+									</ul>
+								</div>
+							</section>
 
 					</section>
-				</div>
 
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<div id="footer" class="container">
-						<header class="major">
-							<h2>Get in touch</h2>
-							<p>Leave a message and let's connect!</p>
-						</header>
-						<div class="row">
-							<section class="col-6 col-12-narrower">
-								
-								<form method="post" action="https://formspree.io/f/xyyayawq">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobile">
-											<input name="name" placeholder="Name" type="text" />
-										</div>
-										<div class="col-6 col-12-mobile">
-											<input name="email" placeholder="Email" type="text" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" placeholder="Message"></textarea>
-										</div>
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" /></li>
-												<li><input type="reset" value="Clear form" /></li>
-											</ul>
-										</div>
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<form method="post" action="https://formspree.io/f/xyyayawq">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
 									</div>
-								</form>
-
-							</section>
-							<section class="col-6 col-12-narrower">
-								<div class="row gtr-0">
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ceceliafowler/"><span class="extra">linkedin.com/</span>ceceliafowler</a></li>
-										
-									</ul>
-									<ul class="divided icons col-6 col-12-mobile">
-                                        <li class="icon brands fa-github"><a href="https://github.com/cecelia001"><span class="extra">github.com/</span>cecelia001</a></li>
-									
-									</ul>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
 								</div>
-							</section>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Untitled Inc<br />
+									1234 Somewhere Road Suite #2894<br />
+									Nashville, TN 00000-0000
+								</li>
+								<li class="icon solid fa-phone">(000) 000-0000</li>
+								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+								<li class="icon solid fa-linkedin"><a href="https://www.linkedin.com/in/ceceliafowler/"></a></li>
+								<li class="icon brands fa-github"><a href="https://github.com/cecelia001"></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
 						</div>
-					</div>
-					<div id="copyright" class="container">
-						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: Cecelia Fowler</a></li>
-						</ul>
-					</div>
-				</div>
+					</section>
 
-		</div>
+			</div>
 
 		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-			<script>
-				function expandMore() {
-				var dots = document.getElementById("dots");
-				var moreText = document.getElementById("more");
-				var btnText = document.getElementById("myBtn");
-
-				if (dots.style.display === "none") {
-					dots.style.display = "inline";
-					btnText.innerHTML = "Read more"; 
-					moreText.style.display = "none";
-				} else {
-					dots.style.display = "none";
-					btnText.innerHTML = "Read less"; 
-					moreText.style.display = "inline";
-				}
-				}
-
-				function expandMore2() {
-				var dots2 = document.getElementById("dots2");
-				var moreText2 = document.getElementById("more2");
-				var btnText2 = document.getElementById("myBtn2");
-
-				if (dots2.style.display === "none") {
-					dots2.style.display = "inline";
-					btnText2.innerHTML = "Read more"; 
-					moreText2.style.display = "none";
-				} else {
-					dots2.style.display = "none";
-					btnText2.innerHTML = "Read less"; 
-					moreText2.style.display = "inline";
-				}
-				}
-			</script>
 	</body>
 </html>
+
+
+
+
+<!-- function expandMore2() {
+	var dots2 = document.getElementById("dots2");
+	var moreText2 = document.getElementById("more2");
+	var btnText2 = document.getElementById("myBtn2");
+
+	if (dots2.style.display === "none") {
+		dots2.style.display = "inline";
+		btnText2.innerHTML = "Read more"; 
+		moreText2.style.display = "none";
+	} else {
+		dots2.style.display = "none";
+		btnText2.innerHTML = "Read less"; 
+		moreText2.style.display = "inline";
+	}
+	} -->
