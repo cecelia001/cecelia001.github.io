@@ -57,6 +57,8 @@
 										<p>Ever since I was a kid, I've always wanted to be a teacher, or so I thought. I enjoyed learning and teaching others what I knew.
 											After a few years in a classroom teaching children, I felt stagnant. I wanted to keep learning new things, so I took an interest in 
 											money management and taught myself the ins and outs of the finance world. I passed the dreaded FINRA certifications and became a financial
+											<span id="dots">...</span>
+											<span id="more">
 											advisor. After a few years, I found myself wanting to be apart of a team again and collaborating with others. I took a job as a Children's Librarian,
 											with my background in education . I quickly became the head of the department and moved to a larger library with a bigger staff. As part of my job, I 
 											created programs for children/teens. I've always had an interest in tech and created a coding program at my library, using Google's CS First program as 
@@ -65,7 +67,7 @@
 											cohort at 9am Barcelona time. I never missed a day or dreaded waking up those early mornings because I was excited and ready to learn something new. Something I 
 											am looking foward to as I continue my journey into tech...I can keep learning new things every day!
 											</span></p>
-										<a href="#" class="special">Learn more</a>
+										<a onclick="expandMore()" class="special" id="myBtn">Learn more</a>
 									</div>
 								</div>
 							</section>
@@ -75,7 +77,7 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/laptop.png" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
+										<h2 class="major">Transition to Tech</h2>
 										<p> I will admit, I did not know what I was getting myself into. I had taken free HTML/CSS courses online. I had even experimented with a little Python. 
 											I was accustomed to excelling in my professional life. Well, let's just say that was not the case at first. I was taken aback when I was initially lost 
 											and uncertain. At orientation, I heard something that motivated me to press on: "Be brave enough to be bad at something new." That fueled me for the first couple of weeks. Despite feeling overwhelmed at the 
@@ -195,25 +197,26 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function expandMore() {
+					var dots = document.getElementById("dots");
+					var moreText = document.getElementById("more");
+					var btnText = document.getElementById("myBtn");
+
+					if (dots.style.display === "none") {
+						dots.style.display = "inline";
+						btnText.innerHTML = "Learn more"; 
+						moreText.style.display = "none";
+					} else {
+						dots.style.display = "none";
+						btnText.innerHTML = "Read less"; 
+						moreText.style.display = "inline";
+					}
+					}
+
+
+			</script>
 
 	</body>
 </html>
 
-
-
-
-<!-- function expandMore2() {
-	var dots2 = document.getElementById("dots2");
-	var moreText2 = document.getElementById("more2");
-	var btnText2 = document.getElementById("myBtn2");
-
-	if (dots2.style.display === "none") {
-		dots2.style.display = "inline";
-		btnText2.innerHTML = "Read more"; 
-		moreText2.style.display = "none";
-	} else {
-		dots2.style.display = "none";
-		btnText2.innerHTML = "Read less"; 
-		moreText2.style.display = "inline";
-	}
-	} -->
