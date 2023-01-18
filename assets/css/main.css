@@ -7,7 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-#me img{
+#me{
 		border-radius: 500px;
 		max-width: 250px;
 		border: 0;
@@ -3502,6 +3502,16 @@ input, select, textarea {
 				#banner .inner {
 					width: 100%;
 				}
+
+					img{
+						border-radius: 500px;
+						max-width: 250px;
+						border: 0;
+						float: right;
+						margin-top: -70px;
+						z-index: -1;
+						position: relative;
+					}
 
 		}
 
