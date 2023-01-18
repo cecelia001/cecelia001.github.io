@@ -3503,15 +3503,9 @@ input, select, textarea {
 					width: 100%;
 				}
 
-					img{
-						border-radius: 500px;
-						max-width: 250px;
-						border: 0;
-						float: right;
-						margin-top: -70px;
-						z-index: -1;
-						position: relative;
-					}
+				#banner h2 {
+					max-width: 380px;
+				}
 
 		}
 
@@ -3523,7 +3517,7 @@ input, select, textarea {
 			}
 
 				#banner .logo {
-					margin: 0 0 1em 0;
+					visibility: hidden;
 				}
 
 					#banner .logo .icon {
