@@ -140,8 +140,12 @@
 								<ul class="actions">
 									<li>
 										<!-- <a id="123" href="schedule.html" target="submit" class="special">Send Message</a> -->
-										<a id="123" target="submit" class="special">Send Message</a>
-										<script>freshpaint.track("precision_test_event_purchase", {"price": 500}); </script>
+										<button id="purchaseButton" target="submit" class="special">Send Message</button>
+										<script>        
+											document.getElementById('purchaseButton').addEventListener('click', function() {
+           										 freshpaint.track("precision_test_2_event_purchase", {"price": 500}); 
+											});
+										</script>
 									</li>
 								</ul>
 							<ul class="copyright">
