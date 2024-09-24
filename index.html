@@ -141,8 +141,10 @@
 									<li>
 										<!-- <a id="123" href="schedule.html" target="submit" class="special">Send Message</a> -->
 										<button id="purchaseButton" target="submit" class="special">Send Message</button>
+										<!-- Freshpaint precision track event -->
 										<script>        
-											document.getElementById('purchaseButton').addEventListener('click', function() {
+											document.getElementById('purchaseButton').addEventListener('click', function() 
+												{
            										 freshpaint.track(
 													"precision_event_purchase_ga4_int_object", 
 													{
@@ -154,7 +156,15 @@
 														}
 													}
 												
-													}); });
+													}),
+												
+												freshpaint.identify("testuser@example.com", 
+												{
+													"email": "testuser@example.com",
+													"name": "Test User"
+												}
+												)
+												});
 										</script>
 									</li>
 								</ul>
