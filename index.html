@@ -143,7 +143,13 @@
 										<button id="purchaseButton" target="submit" class="special">Send Message</button>
 										<script>        
 											document.getElementById('purchaseButton').addEventListener('click', function() {
-           										 freshpaint.track("precision_test_2_event_purchase", {"price": 500}); 
+           										 freshpaint.track("precision_test_2_event_purchase_ga4", {"price": 500}),
+												 {
+													integrations:{
+														'All': false,
+														'Google Analytics 4 Proxy': true
+													}
+												 }; 
 											});
 										</script>
 									</li>
