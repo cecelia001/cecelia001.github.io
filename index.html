@@ -146,7 +146,7 @@
 											document.getElementById('purchaseButton').addEventListener('click', function() 
 												{
            										 freshpaint.track(
-													"precision_event_purchase_ga4_int_object_1", 
+													"precision_event_purchase_ga4_int_object_1_test", 
 													{
 													"price": 500,
 													"$options": {
@@ -155,13 +155,20 @@
 															'Google Analytics 4 Proxy': true
 														}
 													}
-												
-													}, 
-													"precision_event_purchase_ga4_int_object_SECOND",
-								
-												
+													}, 							
 												),
-												
+												freshpaint.track(
+													"precision_event_purchase_ga4_int_object_2_test", 
+													{
+													"price": 500,
+													"$options": {
+														integrations:{
+															'All': false,
+															'Google Analytics 4 Proxy': true
+														}
+													}
+													}, 							
+												)
 												freshpaint.identify("testuser@example.com", 
 												{
 													"email": "testuser@example.com",
