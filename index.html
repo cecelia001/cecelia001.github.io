@@ -142,7 +142,7 @@
 										<!-- <a id="123" href="schedule.html" target="submit" class="special">Send Message</a> -->
 										<button id="purchaseButton" target="submit" class="special">Send Message</button>
 										<!-- Freshpaint precision track event -->
-										<script>        
+										<!-- <script>        
 											document.getElementById('purchaseButton').addEventListener('click', function() 
 												{
            										 freshpaint.track(
@@ -177,7 +177,19 @@
 												)
 												},
 											);
-										</script>
+										</script> -->
+										<script>
+										document.getElementById('purchaseButton').addEventListener('click', function() 
+										{
+											freshpaint.track(
+											"completed_assessment", 							
+										),
+										freshpaint.track(
+											"freshpaint_test_completed_assessment", 						
+										)
+										},
+									);
+								</script>
 									</li>
 								</ul>
 							<ul class="copyright">
