@@ -138,32 +138,31 @@
 											document.getElementById('purchaseButton').addEventListener('click', function() 
 												{
            										 freshpaint.track(
-													"precision_event_TEST1024", 
+													"precision_event_TEST1218", 
 													{
 													"price": 500,
 													"$options": {
 														integrations:{
-															'All': false,
-															'Google Analytics 4 Proxy': true
+															'All': true,
 														}
 													},
-													"properties": {
-														"state": "NY"
-													}
+													// "properties": {
+													// 	"state": "NY"
+													// }
 													}, 							
 												),
-												freshpaint.track(
-													"precision_event_TEST1024", 
-													{
-													"price": 500,
-													"$options": {
-														integrations:{
-															'All': false,
-															'Google Analytics 4 Proxy': true
-														}
-													}
-													}, 							
-												)
+												// freshpaint.track(
+												// 	"precision_event_TEST1024", 
+												// 	{
+												// 	"price": 500,
+												// 	"$options": {
+												// 		integrations:{
+												// 			'All': false,
+												// 			'Google Analytics 4 Proxy': true
+												// 		}
+												// 	}
+												// 	}, 							
+												// )
 												freshpaint.identify("203-123-4567", 
 												{
 													"email": "cece@freshpaint.io",
