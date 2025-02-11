@@ -135,7 +135,14 @@
 									<h3 class="major">Location</h3>
 									<p>Click here to find a location.</p>
 									<!-- <a href="form.html" class="special">Book here</a> -->
-									<a class="special"> Find Location</a>
+									<button id="findLocation" target="submit" class="special">Find Location</button>
+									<script>        
+										document.getElementById('findLocation').addEventListener('click', function() 
+											{
+												freshpaint.track("PTest2")
+											},
+										);
+									</script>
 								</article>
 							</section>
 						</div>
