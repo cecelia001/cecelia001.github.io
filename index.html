@@ -12,6 +12,16 @@
 		<style>
 			#more {display: none;}
 			#more2 {display: none;}
+			.aurora-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .primary {
+            background-color: #28a745; /* Green color for primary button */
+        }
 		</style>
 
 		<!-- Google Tag Manager -->
@@ -128,35 +138,43 @@
 
 					<!-- Five -->
 
-					<!-- Novant Test -->
+					<!-- SR Test -->
 					<div class="score-hero">
-                        <h2>
-Urgent care without the drive                        </h2>
+                        <h2> Test</h2>
                         <div class="score-hero-body">
                             <p>
-                                24/7 expert care with virtual access to a Novant Health provider in minutes. No appointment necessary.
+                                Shadow Root.
                             </p>
                         </div>
-                        <div class="score-call-to-action">
-                            
-  
+                        <div class="score-call-to-action">                          
+  							  <aurora-link-button id="123" buttondata="test" class="score-button GTMBUTTON">
 
-
-
- 
-    <aurora-link-button id="block-139918" buttondata="{&quot;style&quot;:&quot;primary&quot;,&quot;text&quot;:&quot;Start A Video Visit&quot;,&quot;url&quot;:&quot;/link/d46589517c4645f8b44548c4b9a22391.aspx&quot;,&quot;useClickHandler&quot;:false,&quot;clickHandler&quot;:null,&quot;image&quot;:null,&quot;openInNewWindow&quot;:false,&quot;buttonType&quot;:&quot;link&quot;,&quot;title&quot;:&quot;Start A Video Visit&quot;,&quot;buttonStyles&quot;:[&quot;primary&quot;],&quot;href&quot;:&quot;/link/d46589517c4645f8b44548c4b9a22391.aspx&quot;,&quot;icon&quot;:null,&quot;contentType&quot;:&quot;Button&quot;,&quot;id&quot;:&quot;block-139918&quot;,&quot;displayOption&quot;:null,&quot;globalStyle&quot;:[]}" class="score-button GTMBUTTON">
-    </aurora-link-button>
-
-
+								<a class=" aurora-btn primary " target="_self" href="test" rel="">
+									<!--?lit$99777495904$-->Start A Video Visit <!--?lit$99777495904$-->
+								  </a>
+    						</aurora-link-button>
                         </div>
                 </div>
 
-
-
-
-
-
-<!-- End Novant Test -->
+				<script>
+					// Select the aurora-link-button element inside score-hero
+					const auroraLinkButton = document.querySelector('.score-hero .score-button');
+			
+					// Attach an open shadow root to the aurora-link-button element
+					const shadowRoot = auroraLinkButton.attachShadow({ mode: 'open' });
+			
+					// Create the <a> element
+					const anchorElement = document.createElement('a');
+					anchorElement.classList.add('aurora-btn', 'primary');
+					anchorElement.target = '_self';
+					anchorElement.href = '/link/d46589517c4645f8b44548c4b9a22391.aspx';
+					anchorElement.rel = '';
+					anchorElement.innerHTML = '<!--?lit$99777495904$-->Start A Video Visit <!--?lit$99777495904$-->';
+			
+					// Append the <a> element to the shadow root
+					shadowRoot.appendChild(anchorElement);
+				</script> 
+<!-- End SR Test -->
 
 					<section id="five" class="wrapper alt style1">
 						<div class="inner">
