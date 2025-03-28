@@ -157,26 +157,31 @@
                 </div>
 
 				<script>
-						// Select the aurora-link-button element
-						const auroraLinkButton = document.querySelector('#123');
+						// Define the custom element
+					class AuroraLinkButton extends HTMLElement {
+					constructor() {
+						super(); // always call super() first in the constructor.
 
-						// Attach an open shadow root to the aurora-link-button element
-						const shadowRoot = auroraLinkButton.attachShadow({ mode: 'open' });
+						// Attach the shadow root
+						const shadow = this.attachShadow({ mode: 'open' });
 
-						// Create the <a> element
-						const anchorElement = document.createElement('a');
-						anchorElement.classList.add('aurora-btn', 'primary');
-						anchorElement.target = '_self';
-						anchorElement.href = 'test'; // Replace 'test' with your desired URL
-						anchorElement.rel = '';
+						// Create the <a> element inside the shadow DOM
+						const link = document.createElement('a');
+						link.classList.add('aurora-btn', 'primary');
+						link.target = '_self';
+						link.href = '/link/d46589517c4645f8b44548c4b9a22391.aspx';
+						link.rel = '';
 
-						// Set the inner HTML of the <a> element with the specified content
-						anchorElement.innerHTML = `
-							<!--?lit$99777495904$-->Start A Video Visit <!--?lit$99777495904$-->
-						`;
+						// Set inner text (can be dynamic if needed)
+						link.textContent = 'Start A Video Visit';
 
 						// Append the <a> element to the shadow root
-						shadowRoot.appendChild(anchorElement);
+						shadow.appendChild(link);
+					}
+					}
+
+					// Register the custom element
+					customElements.define('aurora-link-button', AuroraLinkButton);
 				</script> 
 <!-- End SR Test -->
 
