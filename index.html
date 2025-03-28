@@ -157,22 +157,26 @@
                 </div>
 
 				<script>
-					// Select the aurora-link-button element inside score-hero
-					const auroraLinkButton = document.querySelector('.score-hero .score-button');
-			
-					// Attach an open shadow root to the aurora-link-button element
-					const shadowRoot = auroraLinkButton.attachShadow({ mode: 'open' });
-			
-					// Create the <a> element
-					const anchorElement = document.createElement('a');
-					anchorElement.classList.add('aurora-btn', 'primary');
-					anchorElement.target = '_self';
-					anchorElement.href = '/link/d46589517c4645f8b44548c4b9a22391.aspx';
-					anchorElement.rel = '';
-					anchorElement.innerHTML = '<!--?lit$99777495904$-->Start A Video Visit <!--?lit$99777495904$-->';
-			
-					// Append the <a> element to the shadow root
-					shadowRoot.appendChild(anchorElement);
+						// Select the aurora-link-button element
+						const auroraLinkButton = document.querySelector('#123');
+
+						// Attach an open shadow root to the aurora-link-button element
+						const shadowRoot = auroraLinkButton.attachShadow({ mode: 'open' });
+
+						// Create the <a> element
+						const anchorElement = document.createElement('a');
+						anchorElement.classList.add('aurora-btn', 'primary');
+						anchorElement.target = '_self';
+						anchorElement.href = 'test'; // Replace 'test' with your desired URL
+						anchorElement.rel = '';
+
+						// Set the inner HTML of the <a> element with the specified content
+						anchorElement.innerHTML = `
+							<!--?lit$99777495904$-->Start A Video Visit <!--?lit$99777495904$-->
+						`;
+
+						// Append the <a> element to the shadow root
+						shadowRoot.appendChild(anchorElement);
 				</script> 
 <!-- End SR Test -->
 
