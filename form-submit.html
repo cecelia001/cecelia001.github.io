@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Submitted</title>
+    <script>
+        // Send postMessage to parent window
+        window.onload = function() {
+            window.parent.postMessage('submission-completed', '*');
+        };
+    </script>
+</head>
+<body>
+    <h1>Thank you for your submission!</h1>
+    <p>Your form has been successfully submitted.</p>
+</body>
+</html>
