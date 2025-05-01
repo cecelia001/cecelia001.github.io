@@ -5,7 +5,7 @@
 </head>
 <body>
   <h2>Iframe Page</h2>
-  <button onclick="sendMessage()">Send Message to Parent</button>
+  <button onclick="sendMessage()">Send Message</button>
 
   <script>
     function sendMessage() {
@@ -13,8 +13,8 @@
         {
           event: 'customEventFromIframe',
           data: {
-            userId: 12345,
-            action: 'clicked_button'
+            value: 123,
+            action: 'success'
           }
         },
         '*'
