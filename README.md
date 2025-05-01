@@ -1,4 +1,12 @@
-# dailyDiary
+UNDER CONSTRUCTION
+
+
+
+
+
+
+
+<!-- # dailyDiary
 
 ## About
 This app is a digital diary. Users can record their thoughts, feelings, what they did that day or anything else they want to write.
@@ -37,4 +45,4 @@ This app is a digital diary. Users can record their thoughts, feelings, what the
 
 
 
-## Possible Future Extensions
+## Possible Future Extensions -->
