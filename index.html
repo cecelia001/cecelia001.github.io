@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cece Healthcare Site</title>
-  <link rel="icon" href="image.png" type="image/png"
+  <title>Cece Demo</title>
+  <link rel="icon" href="image.png" type="image/png" >
 
-<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -15,16 +15,13 @@
   <script>
     // Listen for messages from the iframe
     window.addEventListener('message', function(event) {
-      // Optional: Security check - validate origin
-      // if (event.origin !== 'https://your-iframe-origin.com') return;
-
       if (event.data && event.data.event === 'customEventFromIframe') {
-        window.dataLayer = window.dataLayer || [];
+        // window.dataLayer = window.dataLayer || []; //fallback in case GTM hasn't initialized
         window.dataLayer.push({
           event: 'iframeCustomEvent',       // Trigger this in GTM
           iframeData: event.data.data       // You can use this in your tag
         });
-        console.log('Message received and pushed to dataLayer:', event.data);
+       // console.log('Message received and pushed to dataLayer:', event.data);
       }
     });
   </script>
@@ -35,7 +32,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->  
 
-  <h1>Cece Healthcare Site</h1>
+  <h1>Cece's Demo Healthcare</h1>
 
   <iframe src="iframe.html" width="400" height="200" style="border:1px solid #ccc;"></iframe>
 </body>
