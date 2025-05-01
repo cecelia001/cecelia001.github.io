@@ -1,0 +1,45 @@
+.Services{
+    margin: 50px;
+}
+
+form {
+    display: grid;
+    /* grid-template-columns: 1fr 2fr;
+    grid-row-start: span 2; */
+    width: 100%;
+    gap: 20px;
+}
+
+input, .textarea {
+    display: block;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+}
+
+textarea {
+    height: 21em;
+    grid-row: 1;
+    width: 80em;
+    display: block;
+}
+
+.formButton {
+    width:25%;
+    text-align: center;
+    color: royalblue
+}
+
+.spacing {
+    height: 30px;
+}
+
+.textareaShort {
+    height: 14em;
+    width: 60em;
+}
+
+label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rosybrown;
+}

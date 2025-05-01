@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+
+h1{
+  font-size: 80px;
+  font-weight: 100;
+  color: rgb(27, 27, 131);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
