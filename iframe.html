@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iframe Page</title>
+</head>
+<body>
+  <h2>Iframe Page</h2>
+  <button onclick="sendMessage()">Send Message to Parent</button>
+
+  <script>
+    function sendMessage() {
+      window.parent.postMessage(
+        {
+          event: 'customEventFromIframe',
+          data: {
+            userId: 12345,
+            action: 'clicked_button'
+          }
+        },
+        '*'
+      );
+      console.log('Message sent to parent');
+    }
+  </script>
+</body>
+</html>
