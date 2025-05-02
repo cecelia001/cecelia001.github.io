@@ -51,5 +51,24 @@
     <!--Test to load GTM in iframe-->
     <iframe id="myFrame" src="iframe_GTM.html" width="400" height="200" style="border:1px solid #ccc;"></iframe>
 
+    <script>
+      const iframe = document.getElementById('myFrame');
+    
+      iframe.onload = () => {
+        const iframeDoc = iframe.contentDocument;
+    
+        // Modify content
+        iframeDoc.body.style.backgroundColor = 'lightyellow';
+    
+        // Inject a script directly
+        const script = iframeDoc.createElement('script');
+        script.textContent = `
+          document.body.innerHTML += '<p>Script injected by parent!</p>';
+          console.log("Iframe script running!");
+        `;
+        iframeDoc.head.appendChild(script);
+      };
+    </script>
+
 </body>
 </html>
