@@ -55,8 +55,9 @@
     <h2>Learn More</h2>
     <h5>Sign up for our newsletter</h5>
     <a href="sign_up.html" >
-      <button>Sign Up
+      <button id="signup1"> Sign Up </button>
         <script>
+            document.getElementById("myButton").addEventListener("click", function() {
               freshpaint.track(
                 "event-name",
                 {
@@ -69,9 +70,9 @@
                     }
                 }
             )
+    });
         </script>
 
-      </button>
     </a>
   </div>
 
