@@ -55,7 +55,23 @@
     <h2>Learn More</h2>
     <h5>Sign up for our newsletter</h5>
     <a href="sign_up.html" >
-      <button>Sign Up</button>
+      <button>Sign Up
+        <script>
+              freshpaint.track(
+                "event-name",
+                {
+                    "test_property": 123, 
+                    "Soptions": {
+                        integrations: {
+                            'All': false,
+                            'Google Analytics 4 Proxy::G-ABC123': true,
+                        }
+                    }
+                }
+            )
+        </script>
+
+      </button>
     </a>
   </div>
 
