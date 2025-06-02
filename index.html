@@ -58,6 +58,10 @@
       <button id="signup1"> Sign Up</button>
         <script>
             document.getElementById("signup1").addEventListener("click", function() {
+              freshpaint.identify({
+                  email: 'test123@example.com',
+                  name: 'Mickey Mouse',
+                });
               freshpaint.track(
                 "event-name",
                 {
