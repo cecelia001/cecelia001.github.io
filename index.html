@@ -56,12 +56,40 @@
     <h5>Sign up for our newsletter</h5>
     <a href="sign_up.html" >
       <button id="signup1"> Sign Up</button>
+      <form id="contactForm">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName"><br><br>
+    
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br><br>
+    
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+    
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+    
+        <button type="submit">Submit</button>
+      </form>
+    
+      <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+          e.preventDefault(); // Prevent form from submitting normally
+    
+          const firstName = document.getElementById("firstName").value;
+          const lastName = document.getElementById("lastName").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+    
+          alert("Form submitted.");
+        });
+      </script>
         <script>
             document.getElementById("signup1").addEventListener("click", function() {
-              freshpaint.identify({
-                  email: 'test123@example.com',
-                  name: 'Mickey Mouse',
-                });
+              // freshpaint.identify({
+              //     email: 'test123@example.com',
+              //     name: 'Mickey Mouse',
+              //   });
               freshpaint.track(
                 "event-name",
                 {
