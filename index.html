@@ -73,15 +73,24 @@
       </form>
     
       <script>
-        document.getElementById("contactForm").addEventListener("submit", function(e) {
-          e.preventDefault(); // Prevent form from submitting normally
-    
-          const firstName = document.getElementById("firstName").value;
-          const lastName = document.getElementById("lastName").value;
+        const form = document.getElementById("contactForm");
+      
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+      
           const email = document.getElementById("email").value;
+          const firstName = document.getElementById("first-name").value;
+          const lastName = document.getElementById("last-name").value;
           const phone = document.getElementById("phone").value;
-    
-          alert("Form submitted.");
+      
+          // FingerprintJS identify
+         
+            freshpaint.identify(email, {
+              first_name: firstName,
+              last_name: lastName,
+              phone: phone,
+            });
+          
         });
       </script>
         <script>
