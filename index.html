@@ -88,6 +88,16 @@
           const phone = document.getElementById("phone").value;
           console.log("is this working?:", email, firstName, lastName, phone)
          
+
+        window.dataLayer.push({
+          event: 'newsletterSubmit',    // Trigger this in GTM
+          email: document.getElementById("email").value,
+          firstName: firstName,
+          lastName: lastName,
+          phone: document.getElementById("phone").value
+        });
+
+
             freshpaint.identify(email, {
               first_name: firstName,
               last_name: lastName,
