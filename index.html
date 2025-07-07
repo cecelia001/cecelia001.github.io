@@ -14,6 +14,24 @@
 </script>
 <script src="https://freshpaint-cdn.com/js/d78f582a-a08f-4a6f-ad14-b9e5a1339699/freshpaint.js"></script> -->
 
+<script>
+window.dataLayer = window.dataLayer || []:
+function gtag() {dataLayer.push(arguments);}
+
+if (localStorage-getItem('consentMode') === null){
+  gtag ('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'personalization_storage': 'denied',
+      'functionality_storage': 'denied',
+      "security_storage': 'denied',
+      });
+  } else {
+  gtag( 'consent', 'default', JSON. parse(localStorage-getItem('consentMode' )));
+  }
+</script>
+
+
 
 <!-- End Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -36,6 +54,8 @@
       }
     });
   </script>
+
+
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -86,15 +106,15 @@
           const firstName = document.getElementById("firstName").value;
           const lastName = document.getElementById("lastName").value;
           const phone = document.getElementById("phone").value;
-          console.log("is this working?:", email, firstName, lastName, phone)
+          console.log("test test:", email, firstName, lastName, phone)
          
 
         window.dataLayer.push({
           event: 'newsletterSubmit',    // Trigger this in GTM
-          email: document.getElementById("email").value,
+          email: email,
           firstName: firstName,
           lastName: lastName,
-          phone: document.getElementById("phone").value
+          phone: phone
         });
 
 
