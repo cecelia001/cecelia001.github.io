@@ -14,17 +14,6 @@
 </script>
 <script src="https://freshpaint-cdn.com/js/d78f582a-a08f-4a6f-ad14-b9e5a1339699/freshpaint.js"></script> -->
 
-<div id="consent-banner"></div>
-
-<script>
-  fetch('consent.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('consent-banner').innerHTML = html;
-    });
-</script>
-
-
 
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -45,7 +34,6 @@
       gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
     }
 </script>
-
 
 
 <!-- End Google Tag Manager -->
@@ -73,7 +61,8 @@
 
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
+
+    <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSLXZK75"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->  
@@ -141,7 +130,7 @@
           
         });
       </script>
-        <script>
+        <!-- <script>
             document.getElementById("signup1").addEventListener("click", function() {
               // freshpaint.identify({
               //     email: 'test123@example.com',
@@ -161,7 +150,7 @@
                 }
             )
     });
-        </script>
+        </script> -->
 
     </a>
   </div>
@@ -188,5 +177,22 @@
       };
     </script> -->
 
+
+    <div id="consent-banner"></div>
+
+    <script>
+      fetch('consent.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('consent-banner').innerHTML = html;
+        })
+        .then(() => {
+          // Delay execution to ensure HTML is inserted before JS runs
+          const script = document.createElement('script');
+          script.src = 'consent.js';
+          document.body.appendChild(script);
+        });
+    </script>
+    
 </body>
 </html>

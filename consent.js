@@ -1,21 +1,3 @@
-<div id='cookie-consent-banner' class='cookie-consent-banner'>
-    <h3>Cookie settings</h3>
-    <p>We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior.</p>
-    <button id='btn-accept-all' class='cookie-consent-button btn-success'>Accept All</button>
-    <button id='btn-accept-some' class='cookie-consent-button btn-outline'>Accept Selection</button>
-    <button id='btn-reject-all' class='cookie-consent-button btn-grayscale'>Reject All</button>
-
-    <div class='cookie-consent-options'>
-    <label><input id='consent-necessary' type='checkbox' value='Necessary' checked disabled>Necessary</label>
-    <label><input id='consent-analytics' type='checkbox' value='Analytics'>Analytics</label> 
-    <label><input id='consent-preferences' type='checkbox' value='Preferences' >Preferences</label>
-    <label><input id='consent-marketing' type='checkbox' value='Marketing'>Marketing</label>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-
     function hideBanner() {
         console.log('hiding banner...?')
         document.getElementById('cookie-consent-banner').style.display = 'none';
@@ -63,6 +45,3 @@
         gtag('consent', 'update', consent);
         localStorage.setItem('consentMode', JSON.stringify(consentMode));
     }
-});
-
-</script>
