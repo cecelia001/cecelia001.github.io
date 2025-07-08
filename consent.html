@@ -29,7 +29,7 @@
                 preferences: true,
                 marketing: true
             });
-            hideBanner();
+            // hideBanner();
         });
         document.getElementById('btn-accept-some').addEventListener('click', function() {
             setConsent({
@@ -38,7 +38,7 @@
                 preferences: document.getElementById('consent-preferences').checked,
                 marketing: document.getElementById('consent-marketing').checked
             });
-            hideBanner();
+            // hideBanner();
         });
         document.getElementById('btn-reject-all').addEventListener('click', function() {
             setConsent({
@@ -47,7 +47,7 @@
                 preferences: false,
                 marketing: false
             });
-            hideBanner();
+            // hideBanner();
         });
         document.getElementById('cookie-consent-banner').style.display = 'block';
     }
@@ -60,7 +60,7 @@
             'analytics_storage': consent.analytics ? 'granted' : 'denied',
             'personalization': consent.preferences ? 'granted' : 'denied'
         };
-        gtag('consent', 'update', consent);
+        gtag('consent', 'update', consentMode);
         localStorage.setItem('consentMode', JSON.stringify(consentMode));
     }
 });
