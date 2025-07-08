@@ -30,7 +30,7 @@
 window.dataLayer = window.dataLayer || []:
 function gtag() {dataLayer.push(arguments);}
 
-if (localStorage-getItem('consentMode') === null){
+if (localStorage.getItem('consentMode') === null){
   gtag ('consent', 'default', {
       'ad_storage': 'denied',
       'analytics_storage': 'denied',
@@ -39,7 +39,7 @@ if (localStorage-getItem('consentMode') === null){
       'security_storage': 'denied',
       });
   } else {
-  gtag( 'consent', 'default', JSON. parse(localStorage-getItem('consentMode' )));
+  gtag( 'consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
   }
 </script>
 
@@ -75,7 +75,7 @@ if (localStorage-getItem('consentMode') === null){
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->  
 
-  <h1>Cece's Demo Healthcare</h1>
+  <h1>Cece's Demo Healthcare CM</h1>
 
   <div>
     <h2>Call Us</h2>
