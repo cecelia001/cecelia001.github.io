@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="'en">
+<head>
+  <title>Cece Demo2</title>
+  <link rel="icon" href="image.png" type="image/png" >
+  <link rel="stylesheet" href="index.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FRCNWCQM4Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FRCNWCQM4Z');
+</script>
+
+
+<!-- <script type="text/javascript">
+    (function(){function p(r,e){(e==null||e>r.length)&&(e=r.length);for(var t=0,a=new Array(e);t<e;t++)a[t]=r[t];return a}function v(r){if(Array.isArray(r))return p(r)}function h(r){if(typeof Symbol!="undefined"&&r[Symbol.iterator]!=null||r["@@iterator"]!=null)return Array.from(r)}function A(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function I(r,e){if(r){if(typeof r=="string")return p(r,e);var t=Object.prototype.toString.call(r).slice(8,-1);if(t==="Object"&&r.constructor&&(t=r.constructor.name),t==="Map"||t==="Set")return Array.from(t);if(t==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))return p(r,e)}}function y(r){return v(r)||h(r)||I(r)||A()}var E=function(r,e){if(!e.__SV){try{var t,a,m=window.location,c=m.hash,x=function(n,o){return t=n.match(new RegExp(o+"=([^&]*)")),t?t[1]:null};c&&x(c,"fpState")&&(a=JSON.parse(decodeURIComponent(x(c,"fpState"))),a.action==="fpeditor"&&(window.sessionStorage.setItem("_fpcehash",c),history.replaceState(a.desiredHash||"",r.title,m.pathname+m.search)))}catch(S){}e.__loaded=!1,e.config=!1,e.__SV=2,window.freshpaint=new Proxy(e,{get:function(n,o){return n[o]!==void 0?n[o]:o==="init"?function(l,u,i){var _,d;(_=n)[d="_i"]||(_[d]=[]),n._i.push([l,u||{},i||"freshpaint"])}:function(){for(var l=arguments.length,u=new Array(l),i=0;i<l;i++)u[i]=arguments[i];var _=[o].concat(y(u));return n.push(_),new Proxy(_,{get:function(f,w){return f[w]?f[w]:function(){for(var b=arguments.length,g=new Array(b),s=0;s<b;s++)g[s]=arguments[s];f.length=0,f.push([o].concat(y(u))),f.push([w].concat(y(g)))}}})}}})}};E(document,window.freshpaint||[]);})();
+    freshpaint.init("71d91159-2264-4fb9-aac2-e24f5bd31f67");
+    freshpaint.page();
+</script>
+<script src="https://freshpaint-cdn.com/js/71d91159-2264-4fb9-aac2-e24f5bd31f67/freshpaint.js"></script> -->
+
+<!--
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  if (localStorage.getItem('consentMode') === null){
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'personalization_storage': 'denied',
+        'functionality_storage': 'denied',
+        'security_storage': 'denied',
+        });
+    } else {
+      gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+    }
+</script>
+
+
+<!-- End Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TSLXZK75');</script>
+<!-- End Google Tag Manager -->
+
+  <script>
+    // Listen for messages from the iframe
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.event === 'customEventFromIframe') {
+        // window.dataLayer = window.dataLayer || []; //fallback in case GTM hasn't initialized
+        window.dataLayer.push({
+          event: 'iframeCustomEvent',       // Trigger this in GTM
+          iframeData: event.data.data       // You can use this in your tag
+        });
+       // console.log('Message received and pushed to dataLayer:', event.data);
+      }
+    });
+
+    // FP Script
+  </script>
+ <script type="text/javascript">
+  (function(){function p(r,e){(e==null||e>r.length)&&(e=r.length);for(var t=0,a=new Array(e);t<e;t++)a[t]=r[t];return a}function v(r){if(Array.isArray(r))return p(r)}function h(r){if(typeof Symbol!="undefined"&&r[Symbol.iterator]!=null||r["@@iterator"]!=null)return Array.from(r)}function A(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function I(r,e){if(r){if(typeof r=="string")return p(r,e);var t=Object.prototype.toString.call(r).slice(8,-1);if(t==="Object"&&r.constructor&&(t=r.constructor.name),t==="Map"||t==="Set")return Array.from(t);if(t==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))return p(r,e)}}function y(r){return v(r)||h(r)||I(r)||A()}var E=function(r,e){if(!e.__SV){try{var t,a,m=window.location,c=m.hash,x=function(n,o){return t=n.match(new RegExp(o+"=([^&]*)")),t?t[1]:null};c&&x(c,"fpState")&&(a=JSON.parse(decodeURIComponent(x(c,"fpState"))),a.action==="fpeditor"&&(window.sessionStorage.setItem("_fpcehash",c),history.replaceState(a.desiredHash||"",r.title,m.pathname+m.search)))}catch(S){}e.__loaded=!1,e.config=!1,e.__SV=2,window.freshpaint=new Proxy(e,{get:function(n,o){return n[o]!==void 0?n[o]:o==="init"?function(l,u,i){var _,d;(_=n)[d="_i"]||(_[d]=[]),n._i.push([l,u||{},i||"freshpaint"])}:function(){for(var l=arguments.length,u=new Array(l),i=0;i<l;i++)u[i]=arguments[i];var _=[o].concat(y(u));return n.push(_),new Proxy(_,{get:function(f,w){return f[w]?f[w]:function(){for(var b=arguments.length,g=new Array(b),s=0;s<b;s++)g[s]=arguments[s];f.length=0,f.push([o].concat(y(u))),f.push([w].concat(y(g)))}}})}}})}};E(document,window.freshpaint||[]);})();
+  freshpaint.init("7969df9f-f4cf-4880-8a71-cd4488cf391c");
+  freshpaint.page();
+</script>
+<script src="https://freshpaint-cdn.com/js/7969df9f-f4cf-4880-8a71-cd4488cf391c/freshpaint.js"></script>
+
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSLXZK75"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  
+
+  <h1>Cece Demo</h1>
+
+
+
+  <!-- <div id='cookie-consent-banner' class='cookie-consent-banner' style="display: none;">
+    <h3>Cookie settings</h3>
+    <p>We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior.</p>
+    <button id='btn-accept-all' class='cookie-consent-button btn-success'>Accept All</button>
+    <button id='btn-accept-some' class='cookie-consent-button btn-outline'>Accept Selection</button>
+    <button id='btn-reject-all' class='cookie-consent-button btn-grayscale'>Reject All</button>
+  
+    <div class='cookie-consent-options'>
+      <label><input id='consent-necessary' type='checkbox' value='Necessary' checked disabled>Necessary</label>
+      <label><input id='consent-analytics' type='checkbox' value='Analytics'>Analytics</label> 
+      <label><input id='consent-preferences' type='checkbox' value='Preferences'>Preferences</label>
+      <label><input id='consent-marketing' type='checkbox' value='Marketing'>Marketing</label>
+    </div>
+  </div> -->
+
+  <div>
+    <h2>Call Us</h2>
+    <a href="tel:123">1-800-HEALTHCARE</a>
+    
+  </div>
+  <!--Test to pass message out of iframe-->
+  <!-- <iframe src="iframe.html" width="400" height="200" style="border:1px solid #ccc;"></iframe> -->
+
+  <!--FP Hosted Video-->
+  <!-- <iframe src="https://freshpaint-video.com/d78f582a-a08f-4a6f-ad14-b9e5a1339699/57e479a5-bc97-4f6d-820c-5c2eb80f5ab3" width="560" height="315" frameborder="0" title="Freshpaint Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+  <!-- <iframe src="https://freshpaint-video.com/7969df9f-f4cf-4880-8a71-cd4488cf391c/a71c8641-a8c5-4d6a-a729-e08d5fd477f6" width="560" height="315" frameborder="0" title="Freshpaint Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+  <div>
+    <h2>Learn More</h2>
+    <h5>Sign up for our newsletter</h5>
+    <!-- <a href="sign_up.html" > -->
+      <button id="signup1"> Sign Up</button>
+      <form id="contactForm">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName"><br><br>
+    
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br><br>
+    
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+    
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+    
+        <button type="submit">Submit</button>
+      </form>
+
+      <button type="submit">Hello</button>
+      <button type="submit">Goodbye</button>
+
+      <a class="score-image-button GTMBUTTON" target="_blank" rel="noreferrer" title="Google Play Store" href="https://play.google.com/store/apps/details?id=org;hl=en_US&amp;gl=US" aria-label="Google Play Store, opens in new tab">
+        
+
+      <svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title xmlns="">Get it on Google Play</title>
+
+          <defs>
+            <clipPath id="clip0_8832_147016">
+              <rect width="135" height="40" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+        
+        
+            </a>
+    
+      <script>
+        const form = document.getElementById("contactForm");
+      
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+      
+          const email = document.getElementById("email").value;
+          const firstName = document.getElementById("firstName").value;
+          const lastName = document.getElementById("lastName").value;
+          const phone = document.getElementById("phone").value;
+          console.log("test test:", email, firstName, lastName, phone)
+         
+
+        window.dataLayer.push({
+          event: 'newsletterSubmit',    // Trigger this in GTM
+          email: email,
+          firstName: firstName,
+          lastName: lastName,
+          phone: phone
+        });
+
+
+            // freshpaint.identify(email, {
+            //   first_name: firstName,
+            //   last_name: lastName,
+            //   phone: phone,
+            // });
+          
+        });
+      </script>
+        <script>
+            document.getElementById("signup1").addEventListener("click", function() {
+              // freshpaint.identify({
+              //     email: 'test123@example.com',
+              //     name: 'Mickey Mouse',
+              //   });
+              freshpaint.track(
+                "event-name",
+                {
+                    "test_property": 123, 
+                    "$options": {
+                        integrations: {
+                            'All': false,
+                            'Google Analytics 4 Proxy::G-FRCNWCQM4Z': true,
+                        }
+                    }
+                }
+            )
+    });
+        </script>
+
+    </a>
+  </div>
+
+    <!--Test to load GTM in iframe-->
+    <!-- <iframe id="myFrame" src="iframe_GTM.html" width="400" height="200" style="border:1px solid #ccc;"></iframe>
+
+    <script>
+      const iframe = document.getElementById('myFrame');
+    
+      iframe.onload = () => {
+        const iframeDoc = iframe.contentDocument;
+    
+        // Modify content
+        iframeDoc.body.style.backgroundColor = 'lightyellow';
+    
+        // Inject a script directly
+        const script = iframeDoc.createElement('script');
+        script.textContent = `
+          document.body.innerHTML += '<p>Script injected by parent!</p>';
+          console.log("Iframe script running!");
+        `;
+        iframeDoc.head.appendChild(script);
+      };
+    </script> -->
+
+    
+    
+    <script>
+      // function hideBanner() {
+      //   console.log('hiding banner...');
+      //   document.getElementById('cookie-consent-banner').style.display = 'none';
+      // }
+    
+      function setConsent(consent) {
+        const consentMode = {
+          'functionality_storage': consent.necessary ? 'granted' : 'denied',
+          'security_storage': consent.necessary ? 'granted' : 'denied',
+          'ad_storage': consent.marketing ? 'granted' : 'denied',
+          'analytics_storage': consent.analytics ? 'granted' : 'denied',
+          'personalization_storage': consent.preferences ? 'granted' : 'denied'
+        };
+        gtag('consent', 'update', consentMode);
+        localStorage.setItem('consentMode', JSON.stringify(consentMode));
+      }
+    
+      document.addEventListener('DOMContentLoaded', function () {
+        if (localStorage.getItem('consentMode') === null) {
+          document.getElementById('btn-accept-all').addEventListener('click', function () {
+            setConsent({ necessary: true, analytics: true, preferences: true, marketing: true });
+            hideBanner();
+          });
+    
+          document.getElementById('btn-accept-some').addEventListener('click', function () {
+            setConsent({
+              necessary: true,
+              analytics: document.getElementById('consent-analytics').checked,
+              preferences: document.getElementById('consent-preferences').checked,
+              marketing: document.getElementById('consent-marketing').checked
+            });
+            hideBanner();
+          });
+    
+          document.getElementById('btn-reject-all').addEventListener('click', function () {
+            setConsent({ necessary: false, analytics: false, preferences: false, marketing: false });
+            hideBanner();
+          });
+    
+          document.getElementById('cookie-consent-banner').style.display = 'block';
+        }
+      });
+    </script>
+
+<a href="https://fpcse.github.io/fp-demo/"><button>D Demo Site</button></a>
+
+    
+</body>
+</html>
