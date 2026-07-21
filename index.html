@@ -16,6 +16,28 @@
   <!-- End Google Tag Manager -->
   <!-- End Google Tag Manager -->
 
+
+<!-- Consent  -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+  
+    if (localStorage.getItem('consentMode') === null){
+      gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied',
+          'personalization_storage': 'denied',
+          'functionality_storage': 'denied',
+          'security_storage': 'denied',
+          });
+      } else {
+        gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+      }
+  </script>
+
 </head>
 <body>
 
@@ -33,6 +55,22 @@
     <section id="hero">
       <h2>Hello</h2>
     </section>
+
+    <!-- Consent Banner -->
+      <div id='cookie-consent-banner' class='cookie-consent-banner' style="display: none;">
+    <h3>Cookie settings</h3>
+    <p>We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior.</p>
+    <button id='btn-accept-all' class='cookie-consent-button btn-success'>Accept All</button>
+    <button id='btn-accept-some' class='cookie-consent-button btn-outline'>Accept Selection</button>
+    <button id='btn-reject-all' class='cookie-consent-button btn-grayscale'>Reject All</button>
+  
+    <div class='cookie-consent-options'>
+      <label><input id='consent-necessary' type='checkbox' value='Necessary' checked disabled>Necessary</label>
+      <label><input id='consent-analytics' type='checkbox' value='Analytics'>Analytics</label> 
+      <label><input id='consent-preferences' type='checkbox' value='Preferences'>Preferences</label>
+      <label><input id='consent-marketing' type='checkbox' value='Marketing'>Marketing</label>
+    </div>
+  </div>
 
     <section id="services">
       <h2>Our Services</h2>
