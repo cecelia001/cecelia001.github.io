@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Services | Your Website</title>
+  <meta
+    name="description"
+    content="Explore our services and get in touch to discuss how we can help."
+  >
+
+  <!-- If your main site has a stylesheet, use the correct relative path -->
+  <link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+
+<body>
+
+  <!-- Your existing header/navigation goes here -->
+  <header>
+    <nav>
+        <a href="../">Home</a>
+        <a href="./">Services</a>
+        <a href="../#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Services Page -->
+  <main>
+
+    <section class="services-hero">
+      <h1>Our Services</h1>
+
+      <p>
+        We provide solutions designed around your goals.
+        Explore our services below and get in touch to discuss
+        what we can do for you.
+      </p>
+
+      <a href="#contact" class="card-cta">
+        Let's Talk
+      </a>
+    </section>
+
+
+    <section id="services">
+      <h2>How We Can Help</h2>
+
+      <div class="card-grid" id="card-grid">
+
+        <div class="card" data-card-id="1">
+          <h3>Service 1</h3>
+          <p>
+            Learn more about this service and how it can
+            help you achieve your goals.
+          </p>
+
+          <a href="#contact" class="card-cta">
+            Discuss This Service
+          </a>
+        </div>
+
+
+        <div class="card" data-card-id="2">
+          <h3>Service 2</h3>
+          <p>
+            Explore how we can provide the right solution
+            for your needs.
+          </p>
+
+          <a href="#contact" class="card-cta">
+            Discuss This Service
+          </a>
+        </div>
+
+
+        <div class="card" data-card-id="3">
+          <h3>Service 3</h3>
+          <p>
+            Let's talk about your requirements and find
+            the best approach for your project.
+          </p>
+
+          <a href="#contact" class="card-cta">
+            Discuss This Service
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Contact-focused section -->
+    <section id="contact">
+      <h2>Let's Talk About Your Project</h2>
+
+      <p>
+        Have questions about our services or want to discuss
+        what you need? Get in touch and tell us a little
+        about your project.
+      </p>
+
+      <form id="demo-form">
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required
+        />
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your email"
+          required
+        />
+
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Tell us about your project"
+        ></textarea>
+
+        <button type="submit" id="form-submit">
+          Send Message
+        </button>
+
+      </form>
+    </section>
+
+  </main>
+
+
+  <!-- Consent Banner -->
+  <div
+    id="cookie-consent-banner"
+    class="cookie-consent-banner"
+    style="display: none;"
+  >
+    <h3>Cookie settings</h3>
+
+    <p>
+      We use cookies to provide you with the best possible experience.
+      They also allow us to analyze user behavior.
+    </p>
+
+    <button
+      id="btn-accept-all"
+      class="cookie-consent-button btn-success"
+    >
+      Accept All
+    </button>
+
+    <button
+      id="btn-accept-some"
+      class="cookie-consent-button btn-outline"
+    >
+      Accept Selection
+    </button>
+
+    <button
+      id="btn-reject-all"
+      class="cookie-consent-button btn-grayscale"
+    >
+      Reject All
+    </button>
+
+    <div class="cookie-consent-options">
+
+      <label>
+        <input
+          id="consent-necessary"
+          type="checkbox"
+          value="Necessary"
+          checked
+          disabled
+        >
+        Necessary
+      </label>
+
+      <label>
+        <input
+          id="consent-analytics"
+          type="checkbox"
+          value="Analytics"
+        >
+        Analytics
+      </label>
+
+      <label>
+        <input
+          id="consent-preferences"
+          type="checkbox"
+          value="Preferences"
+        >
+        Preferences
+      </label>
+
+      <label>
+        <input
+          id="consent-marketing"
+          type="checkbox"
+          value="Marketing"
+        >
+        Marketing
+      </label>
+
+    </div>
+  </div>
+
+
+  <!-- If your existing site has a JS file -->
+  <script src="../js/script.js"></script>
+
+</body>
+</html>
