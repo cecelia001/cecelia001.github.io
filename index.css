@@ -1,4 +1,4 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* * { box-sizing: border-box; margin: 0; padding: 0; } */
 body { font-family: system-ui, sans-serif; color: #222; line-height: 1.5; }
 header { background: #1a1a2e; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
 header h1 { font-size: 1.25rem; }
