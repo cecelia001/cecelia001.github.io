@@ -11,23 +11,57 @@
     freshpaint.page();
 </script>
 <script src="https://freshpaint-cdn.com/js/38ee7b20-0482-4cb7-8ede-53c57a8bff9b/freshpaint.js"></script>
+<!-- end -->
 
+<style>
+    body {
+        font-family: Arial;
+        margin: 30px;
+    }
+
+    button {
+        padding: 10px 15px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    #message {            
+        margin-top: 20px;
+        padding: 15px;
+        background: #eef6f7;
+        border-radius: 6px;
+        display: none;
+        }
+</style>
 </head>
+
 <body>
 
-    <h1>Welcome to Telehealth</h1>
+<h1>Telehealth Portal</h1>
+<p>Welcome to the telehealth page.</p>
 
-    <p>This is my separate telehealth webpage.</p>
+<button onclick="startVisit()">Start Visit</button>
+<button onclick="schedule()">Schedule Appointment</button>
+<button onclick="contact()">Contact Us</button>
 
-    <button onclick="showMessage()">
-        Click Me
-    </button>
+<div id="message"></div>
 
-    <script>
-        function showMessage() {
-            alert("Welcome to Telehealth!");
-        }
-    </script>
+<script>
+    function startVisit() {
+        document.getElementById("message").innerHTML =
+            "<h3>Start Visit</h3><p>Visit functionality coming soon.</p>";
+    }
+
+    function schedule() {
+        document.getElementById("message").innerHTML =
+            "<h3>Schedule Appointment</h3><p>Please contact our office.</p>";
+    }
+
+    function contact() {
+        document.getElementById("message").innerHTML =
+            "<h3>Contact Us</h3><p>Email: info@example.com</p>";
+    }
+</script>
 
 </body>
 </html>
