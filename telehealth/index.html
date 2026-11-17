@@ -30,7 +30,6 @@
         padding: 15px;
         background: #eef6f7;
         border-radius: 6px;
-        display: none;
         }
 </style>
 </head>
@@ -46,22 +45,33 @@
 
 <div id="message"></div>
 
+
 <script>
+    function showMessage(content) {
+        const message = document.getElementById("message");
+        message.innerHTML = content;
+        message.style.display = "block";
+    }
+
     function startVisit() {
-        document.getElementById("message").innerHTML =
-            "<h3>Start Visit</h3><p>Visit functionality coming soon.</p>";
+        showMessage(
+            "<h3>Start Visit</h3><p>Visit functionality coming soon.</p>"
+        );
     }
 
     function schedule() {
-        document.getElementById("message").innerHTML =
-            "<h3>Schedule Appointment</h3><p>Please contact our office.</p>";
+        showMessage(
+            "<h3>Schedule Appointment</h3><p>Please contact our office.</p>"
+        );
     }
 
     function contact() {
-        document.getElementById("message").innerHTML =
-            "<h3>Contact Us</h3><p>Email: info@example.com</p>";
+        showMessage(
+            "<h3>Contact Us</h3><p>Email: info@example.com</p>"
+        );
     }
 </script>
+
 
 </body>
 </html>
