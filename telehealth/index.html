@@ -1,76 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Cece Demo Telehealth</title>
-
-<!-- Freshpaint pharma telehealth testing env script -->
-<script type="text/javascript">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TeleRx — Clinical visit | Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- Freshpaint pharma telehealth testing env script -->
+    <script type="text/javascript">
     (function(){function p(r,e){(e==null||e>r.length)&&(e=r.length);for(var t=0,a=new Array(e);t<e;t++)a[t]=r[t];return a}function v(r){if(Array.isArray(r))return p(r)}function h(r){if(typeof Symbol!="undefined"&&r[Symbol.iterator]!=null||r["@@iterator"]!=null)return Array.from(r)}function A(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function I(r,e){if(r){if(typeof r=="string")return p(r,e);var t=Object.prototype.toString.call(r).slice(8,-1);if(t==="Object"&&r.constructor&&(t=r.constructor.name),t==="Map"||t==="Set")return Array.from(t);if(t==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))return p(r,e)}}function y(r){return v(r)||h(r)||I(r)||A()}var E=function(r,e){if(!e.__SV){try{var t,a,m=window.location,c=m.hash,x=function(n,o){return t=n.match(new RegExp(o+"=([^&]*)")),t?t[1]:null};c&&x(c,"fpState")&&(a=JSON.parse(decodeURIComponent(x(c,"fpState"))),a.action==="fpeditor"&&(window.sessionStorage.setItem("_fpcehash",c),history.replaceState(a.desiredHash||"",r.title,m.pathname+m.search)))}catch(S){}e.__loaded=!1,e.config=!1,e.__SV=2,window.freshpaint=new Proxy(e,{get:function(n,o){return n[o]!==void 0?n[o]:o==="init"?function(l,u,i){var _,d;(_=n)[d="_i"]||(_[d]=[]),n._i.push([l,u||{},i||"freshpaint"])}:function(){for(var l=arguments.length,u=new Array(l),i=0;i<l;i++)u[i]=arguments[i];var _=[o].concat(y(u));return n.push(_),new Proxy(_,{get:function(f,w){return f[w]?f[w]:function(){for(var b=arguments.length,g=new Array(b),s=0;s<b;s++)g[s]=arguments[s];f.length=0,f.push([o].concat(y(u))),f.push([w].concat(y(g)))}}})}}})}};E(document,window.freshpaint||[]);})();
     freshpaint.init("38ee7b20-0482-4cb7-8ede-53c57a8bff9b");
     freshpaint.page();
-</script>
-<script src="https://freshpaint-cdn.com/js/38ee7b20-0482-4cb7-8ede-53c57a8bff9b/freshpaint.js"></script>
+    </script>
+    <script src="https://freshpaint-cdn.com/js/38ee7b20-0482-4cb7-8ede-53c57a8bff9b/freshpaint.js"></script>
 <!-- end -->
-
-<style>
-    body {
-        font-family: Arial;
-        margin: 30px;
+    <style>
+    :root{
+      --ink:#1A1A2E;--indigo:#3B37A0;--indigo-dk:#2C2980;--wash:#ECEBF7;--paper:#F5F6FB;
+      --green:#12A150;--green-dk:#0E8442;--green-soft:#E3F5EA;--line:#DEDDF0;--grey:#6A6A85;
+      --amber:#B47A12;--amber-soft:#FBEFD9;
+      --display:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     }
-
-    button {
-        padding: 10px 15px;
-        margin: 5px;
-        cursor: pointer;
+    *{box-sizing:border-box}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.5}
+    h1,h2,h3,h4{font-family:var(--display);line-height:1.15;margin:0 0 .5em;letter-spacing:-.015em}
+    :focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:4px}
+    button{font-family:var(--display);cursor:pointer}
+    
+    .appbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+    .appbar .in{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .logo{display:flex;align-items:center;gap:9px}
+    .logo .glyph{width:34px;height:34px;border-radius:9px;background:var(--indigo);display:flex;align-items:center;justify-content:center;flex:none}
+    .logo .mark{font-family:var(--display);font-weight:700;font-size:22px;color:var(--indigo);letter-spacing:-.02em}
+    .logo .mark span{color:var(--green)}
+    .byline{font-family:var(--body);font-size:11px;color:var(--grey);margin-top:1px}
+    .secure{display:flex;align-items:center;gap:6px;font-family:var(--body);font-size:12px;font-weight:600;color:var(--indigo)}
+    
+    .progress{max-width:720px;margin:0 auto;padding:14px 20px 0}
+    .pbar{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+    .pbar i{display:block;height:100%;background:var(--indigo);width:0;transition:width .3s ease}
+    .pstep{font-family:var(--display);font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--indigo);margin-top:8px}
+    
+    .screen{max-width:720px;margin:0 auto;padding:22px 20px 60px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
+    h1.s{font-size:26px;color:var(--indigo);margin-bottom:8px}
+    p.lede{color:var(--grey);font-size:16px;margin:0 0 22px}
+    
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:15px;border-radius:10px;padding:14px 22px;border:2px solid transparent;text-decoration:none;transition:background .15s,color .15s}
+    .btn-primary{background:var(--indigo);color:#fff}
+    .btn-primary:hover{background:var(--indigo-dk)}
+    .btn-primary:disabled{background:#B3B1DA;cursor:default}
+    .btn-green{background:var(--green);color:#fff}
+    .btn-green:hover{background:var(--green-dk)}
+    .btn-ghost{border-color:var(--line);color:var(--indigo);background:#fff}
+    .btn-block{width:100%}
+    .actions{display:flex;gap:12px;margin-top:8px}
+    .actions .btn{flex:1}
+    
+    .referral{display:flex;gap:14px;align-items:center;background:var(--wash);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:22px}
+    .referral .rl{width:46px;height:46px;border-radius:11px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+    .referral .rt{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink)}
+    .referral .rs{font-size:13px;color:var(--grey)}
+    .referral .rt b{color:var(--indigo)}
+    
+    .field{margin-bottom:16px}
+    .field label{display:block;font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--ink);margin-bottom:6px}
+    .field input{width:100%;height:48px;border:1px solid var(--line);border-radius:10px;padding:0 14px;font-size:15px;font-family:var(--body);color:var(--ink);background:#fff;outline:none}
+    .field input:focus{border-color:var(--indigo)}
+    .field .hint{font-size:12.5px;color:var(--grey);margin-top:5px}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    
+    .q .qt{font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:12px}
+    .opts{display:flex;flex-direction:column;gap:10px}
+    .opt{display:flex;align-items:center;gap:12px;border:2px solid var(--line);border-radius:12px;padding:13px 16px;background:#fff;font-size:15px;color:var(--ink);text-align:left;width:100%;transition:border-color .15s,background .15s}
+    .opt:hover{border-color:var(--indigo)}
+    .opt.sel{border-color:var(--indigo);background:var(--wash)}
+    .opt .dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center}
+    .opt.sel .dot{border-color:var(--indigo);background:var(--indigo)}
+    .opt.sel .dot:after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+    
+    .spinner{width:46px;height:46px;border:4px solid var(--wash);border-top-color:var(--indigo);border-radius:50%;animation:spin 1s linear infinite;margin:10px auto 18px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .reviewing{text-align:center;padding:20px 0}
+    .reviewing p{color:var(--grey)}
+    .clin{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+    .clin .av{width:54px;height:54px;border-radius:50%;background:var(--wash);display:flex;align-items:center;justify-content:center;flex:none}
+    .clin .cn{font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink)}
+    .clin .cr{color:var(--grey);font-size:13.5px}
+    .chat-bub{background:var(--wash);border-radius:12px;border-bottom-left-radius:3px;padding:13px 16px;font-size:15px;color:var(--ink);margin-bottom:12px}
+    
+    .decision{display:flex;align-items:center;gap:10px;border-radius:10px;padding:11px 14px;font-family:var(--display);font-weight:600;font-size:14px;margin-bottom:18px}
+    .decision.ok{background:var(--green-soft);color:var(--green-dk)}
+    .decision.hold{background:var(--amber-soft);color:var(--amber)}
+    .rx{border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:20px}
+    .rx .rname{font-family:var(--display);font-weight:700;font-size:18px;color:var(--indigo)}
+    .rx .rgen{color:var(--grey);font-size:13.5px;margin-bottom:10px}
+    .rx .rmeta{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--ink)}
+    .rx .rmeta b{font-family:var(--display)}
+    
+    .vitals{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+    .vital{border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+    .vital .vl{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey);font-weight:600}
+    .vital .vv{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);margin-top:3px}
+    
+    .demo-banner{background:#2C2980;color:#fff;font-size:12.5px;text-align:center;padding:7px 20px;font-weight:600}
+    .note{font-size:12.5px;color:var(--grey);margin-top:16px;line-height:1.5}
+    .center{text-align:center}
+    .big-check{width:78px;height:78px;border-radius:50%;background:var(--green-soft);display:flex;align-items:center;justify-content:center;margin:6px auto 16px}
+    
+    .modal-bg{position:fixed;inset:0;background:rgba(44,41,128,.94);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:56px 18px 40px;overflow-y:auto}
+    .modal-bg.show{display:flex}
+    .modal-lg{background:#fff;border-radius:10px;max-width:560px;width:100%;position:relative;overflow:hidden;text-align:center}
+    .modal-close{position:absolute;top:-20px;right:-20px;width:44px;height:44px;border-radius:50%;background:var(--indigo);color:#fff;border:3px solid #fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:2}
+    .m-head{background:var(--wash);border-bottom:1px solid var(--line);padding:26px 34px 22px}
+    .m-brands{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:6px}
+    .m-brands .b{font-family:var(--display);font-weight:700;font-size:20px}
+    .m-brands .tr{color:var(--indigo)}.m-brands .tr span{color:var(--green)}
+    .m-brands .rx{color:#124C63}.m-brands .rx span{color:#E4673F}
+    .m-brands .arw{color:var(--grey);font-size:20px}
+    .m-head p{margin:12px 0 0;font-family:var(--display);font-weight:600;font-size:15.5px;color:var(--ink)}
+    .m-body{padding:26px 34px 30px;text-align:left}
+    .m-body>.intro{margin:0 0 18px;font-size:15.5px;color:var(--ink)}
+    .m-body>.intro strong{color:#124C63}
+    .m-step{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start;margin-bottom:16px}
+    .m-step .ico{width:52px;height:48px;background:var(--green-soft);border-radius:12px;display:flex;align-items:center;justify-content:center}
+    .m-step h4{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--green-dk);margin:0 0 4px}
+    .m-step p{margin:0;font-size:14.5px;color:var(--ink);line-height:1.5}
+    .m-cta{text-align:center;margin-top:22px}
+    .m-foot{background:var(--wash);border-top:1px solid var(--line);padding:14px 34px;text-align:center;font-size:12.5px;font-weight:600;color:var(--ink)}
+    @media(max-width:600px){.m-head,.m-body,.m-foot{padding-left:20px;padding-right:20px}.m-step{grid-template-columns:1fr;gap:8px}.modal-close{right:-4px;top:-18px}}
+    </style>
+    </head>
+    <body>
+    
+    <div class="demo-banner">Demonstration only · TeleRx is a fictional telehealth company · do not enter real personal or health information</div>
+    
+    <div class="appbar">
+      <div class="in">
+        <div class="logo">
+          <span class="glyph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6a2 2 0 012-2h8a2 2 0 012 2v3l4-2v10l-4-2v3a2 2 0 01-2 2H6a2 2 0 01-2-2z"></path><path d="M10 10v4M8 12h4" stroke-linecap="round"></path></svg></span>
+          <div><div class="mark">Tele<span>Rx</span></div><div class="byline">Independent telehealth · clinical partner to RxMail</div></div>
+        </div>
+        <span class="secure"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3B37A0" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9.5 12l1.8 1.8 3.4-3.6"></path></svg>Secure visit</span>
+      </div>
+    </div>
+    
+    <div class="progress" id="progress">
+      <div class="pbar"><i id="pbar" style="width: 0%;"></i></div>
+      <div class="pstep" id="pstep">Step 1 of 5 · Referral</div>
+    </div>
+    
+    <div class="screen" id="screen"><h1 class="s">Welcome — you were referred by RxMail</h1><p class="lede">TeleRx is an independent, licensed telehealth company. We'll run your clinical visit for <b style="color:var(--indigo)">weight management</b>, then send any prescription back to RxMail.</p><div class="referral"><div class="rl"><svg width="24" height="24" viewBox="0 0 46 46" aria-hidden="true"><path d="M8 4h30a6 6 0 016 6v18a6 6 0 01-6 6H22l-10 8v-8H8a6 6 0 01-6-6V10a6 6 0 016-6z" fill="#1B7F86"></path><path d="M23 12v14M16 19h14" stroke="#fff" stroke-width="4" stroke-linecap="round"></path></svg></div><div><div class="rt">Referral received from <b>RxMail</b></div><div class="rs">Weight management · account details shared securely</div></div></div><div class="card"><h3 style="font-size:16px;color:var(--indigo)">What happens in your visit</h3><p style="color:var(--grey);font-size:14.5px;margin:6px 0 0">A few health questions, a clinician review, and a decision. If prescribed, it routes straight back to RxMail for fulfillment. Most visits take under 5 minutes.</p></div><div class="actions" style="margin-top:16px"><button class="btn btn-primary btn-block" onclick="go('verify')">Begin my visit</button></div><p class="note">Clinicians on TeleRx are independent, licensed medical professionals — they are not employed by TeleRx or RxMail. Prescriptions are written solely at the clinician's discretion, and not every visit results in one. Visits are available to adults 18 and older in most states.</p><p class="note">Fictional demo. No real clinician, visit, or prescription is involved.</p></div>
+    
+    <!-- hand prescription back to RxMail -->
+    <div class="modal-bg" id="handback" role="dialog" aria-modal="true" aria-labelledby="hbTitle">
+      <div class="modal-lg">
+        <button class="modal-close" data-hbclose="" aria-label="Close">✕</button>
+        <div class="m-head">
+          <div class="m-brands"><span class="b tr">Tele<span>Rx</span></span><span class="arw">→</span><span class="b rx">Rx<span>Mail</span></span></div>
+          <p id="hbTitle">Sending your prescription to RxMail.</p>
+        </div>
+        <div class="m-body">
+          <p class="intro">Your TeleRx visit is complete. We'll transmit the prescription and your visit summary to <strong>RxMail</strong> to fill and ship.</p>
+          <div class="m-step">
+            <div class="ico"><svg width="30" height="30" viewBox="0 0 48 48" fill="none" stroke="#0E8442" stroke-width="2"><path d="M14 24l7 7 14-14"></path></svg></div>
+            <div><h4>Prescription issued</h4><p>Signed by your TeleRx clinician and sent electronically.</p></div>
+          </div>
+          <div class="m-step">
+            <div class="ico"><svg width="30" height="30" viewBox="0 0 48 48" fill="none" stroke="#0E8442" stroke-width="2"><rect x="8" y="14" width="32" height="22" rx="3"></rect><path d="M8 20h32"></path></svg></div>
+            <div><h4>RxMail fills &amp; ships</h4><p>You'll pick a savings option and delivery method back on RxMail.</p></div>
+          </div>
+          <div class="m-cta"><a class="btn btn-green" id="handbackGo">Return to RxMail ▸</a></div>
+        </div>
+        <div class="m-foot">Demo only — this simulates returning to the separate RxMail company.</div>
+      </div>
+    </div>
+    
+    <script>
+    var CONDITIONS={
+      weight:{name:'Weight management',rx:'Denbalt ER 7.5 mg',gen:'(demo compound) once-daily extended-release tablet',dose:'1 tablet each morning',
+        q:[{q:'What is your current goal?',o:['Lose weight','Maintain weight loss','Not sure yet']},
+           {q:'Have you tried weight-management medication before?',o:['Yes','No']},
+           {q:'Do any of these apply? (heart disease, pregnancy, eating disorder)',o:['None of these','One or more',],flag:1}]},
+      skin:{name:'Skin care',rx:'Clareen 0.05% cream',gen:'(demo compound) nightly topical retinoid',dose:'Pea-size amount nightly',
+        q:[{q:'What are you treating?',o:['Acne','Fine lines / anti-aging','Dark spots / melasma']},
+           {q:'How would you describe your skin?',o:['Oily','Dry','Combination','Sensitive']},
+           {q:'Are you pregnant or breastfeeding?',o:['No','Yes'],flag:1}]},
+      hair:{name:'Hair loss',rx:'Finaxil 1 mg',gen:'(demo compound) once-daily tablet',dose:'1 tablet daily',
+        q:[{q:'Where are you noticing thinning?',o:['Crown','Hairline','Overall thinning']},
+           {q:'How long has it been happening?',o:['< 1 year','1–3 years','3+ years']},
+           {q:'Any history of liver conditions?',o:['No','Yes'],flag:1}]},
+      everyday:{name:'Everyday care',rx:'Zolvex 500 mg',gen:'(demo compound) as-needed tablet',dose:'As directed',
+        q:[{q:'What do you need help with today?',o:['Cold sores','Seasonal allergies','Acid reflux']},
+           {q:'How often do you get symptoms?',o:['Rarely','Monthly','Weekly or more']},
+           {q:'Any known medication allergies?',o:['None','One or more'],flag:1}]}
+    };
+    
+    function param(k){var m=location.search.match(new RegExp(k+'=([^&]+)'));return m?decodeURIComponent(m[1]):null;}
+    var condition=param('condition');if(!condition||!CONDITIONS[condition])condition='weight';
+    var fromRx=param('from')==='rxmail';
+    
+    var VISIT_FEE=65;
+    var state={answers:{},flagged:false,liveDone:false,pay:'insurance'};
+    var qi=0;
+    var steps=['arrival','verify','intake','review','decision'];
+    var stepLabels={arrival:'Referral',verify:'Verify identity',intake:'Health questions',review:'Clinician review',decision:'Decision'};
+    var current='arrival';
+    var timers=[];function clearTimers(){timers.forEach(clearTimeout);timers=[];}
+    
+    function setProgress(){var prog=document.getElementById('progress');var idx=steps.indexOf(current);
+      if(idx<0){prog.hidden=true;return;}prog.hidden=false;
+      document.getElementById('pbar').style.width=Math.round(idx/(steps.length-1)*100)+'%';
+      document.getElementById('pstep').textContent='Step '+(idx+1)+' of '+steps.length+' · '+stepLabels[current];}
+    function render(next){clearTimers();if(next)current=next;setProgress();
+      document.getElementById('screen').innerHTML=SCREENS[current]();window.scrollTo(0,0);if(AFTER[current])AFTER[current]();}
+    
+    function intakeSummary(){
+      var c=CONDITIONS[condition];var al='None reported',co='None reported',me='None reported';
+      if(condition==='weight'){co=state.answers[2]===1?'Reported concern':'None reported';}
+      if(condition==='skin'){co=state.answers[2]===1?'Pregnancy/nursing':'None reported';}
+      if(condition==='hair'){co=state.answers[2]===1?'Liver history':'None reported';}
+      if(condition==='everyday'){al=state.answers[2]===1?'Reported allergy':'None reported';}
+      return {allergies:al,conditions:co,meds:me};
     }
-
-    #message {            
-        margin-top: 20px;
-        padding: 15px;
-        background: #eef6f7;
-        border-radius: 6px;
+    
+    var SCREENS={
+      arrival:function(){var c=CONDITIONS[condition];
+        return '<h1 class="s">Welcome — you were referred by RxMail</h1>'
+          +'<p class="lede">TeleRx is an independent, licensed telehealth company. We\'ll run your clinical visit for <b style="color:var(--indigo)">'+c.name.toLowerCase()+'</b>, then send any prescription back to RxMail.</p>'
+          +'<div class="referral"><div class="rl"><svg width="24" height="24" viewBox="0 0 46 46" aria-hidden="true"><path d="M8 4h30a6 6 0 016 6v18a6 6 0 01-6 6H22l-10 8v-8H8a6 6 0 01-6-6V10a6 6 0 016-6z" fill="#1B7F86"/><path d="M23 12v14M16 19h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg></div>'
+          +'<div><div class="rt">Referral received from <b>RxMail</b></div><div class="rs">'+c.name+' · account details shared securely</div></div></div>'
+          +'<div class="card"><h3 style="font-size:16px;color:var(--indigo)">What happens in your visit</h3>'
+          +'<p style="color:var(--grey);font-size:14.5px;margin:6px 0 0">A few health questions, a clinician review, and a decision. If prescribed, it routes straight back to RxMail for fulfillment. Most visits take under 5 minutes.</p></div>'
+          +'<div class="actions" style="margin-top:16px"><button class="btn btn-primary btn-block" onclick="go(\'verify\')">Begin my visit</button></div>'
+          +'<p class="note">Clinicians on TeleRx are independent, licensed medical professionals — they are not employed by TeleRx or RxMail. Prescriptions are written solely at the clinician\'s discretion, and not every visit results in one. Visits are available to adults 18 and older in most states.</p>'
+          +'<p class="note">Fictional demo. No real clinician, visit, or prescription is involved.</p>';
+      },
+      verify:function(){
+        var ins=state.pay==='insurance';
+        return '<h1 class="s">Confirm it\'s you</h1><p class="lede">TeleRx verifies identity before every visit. Demo only — enter fake info.</p>'
+          +'<div class="card"><div class="row2"><div class="field"><label>Legal first name</label><input placeholder="Alex"></div><div class="field"><label>Legal last name</label><input placeholder="Demo"></div></div>'
+          +'<div class="field"><label>Date of birth</label><input placeholder="MM / DD / YYYY"></div>'
+          +'<div class="field"><label>Mobile (for visit updates)</label><input placeholder="(555) 555-5555"><div class="hint">We\'d text a verification code in a real visit.</div></div></div>'
+          +'<h3 style="font-size:16px;color:var(--indigo);margin-top:22px">How you\'ll pay for the visit</h3>'
+          +'<div style="display:flex;gap:12px;margin:12px 0">'
+          +'<button class="opt'+(ins?' sel':'')+'" style="flex:1" onclick="setPay(\'insurance\')"><span class="dot"></span><span><b>Insurance</b><br><span style="color:var(--grey);font-size:13px">$0 visit copay</span></span></button>'
+          +'<button class="opt'+(!ins?' sel':'')+'" style="flex:1" onclick="setPay(\'cash\')"><span class="dot"></span><span><b>Pay cash</b><br><span style="color:var(--grey);font-size:13px">$'+VISIT_FEE+' flat visit fee</span></span></button></div>'
+          +'<p class="note" style="margin-top:2px">The visit fee covers the consultation only and is charged whether or not a prescription is written. Any medication is billed separately by the pharmacy you choose (RxMail).</p>'
+          +'<div class="actions" style="margin-top:14px"><button class="btn btn-primary btn-block" onclick="startIntake()">Continue to health questions</button></div>';
+      },
+      intake:function(){var c=CONDITIONS[condition];var item=c.q[qi];
+        var opts=item.o.map(function(o,i){var sel=state.answers[qi]===i?' sel':'';
+          return '<button class="opt'+sel+'" onclick="answer('+i+')"><span class="dot"></span>'+o+'</button>';}).join('');
+        return '<h1 class="s">TeleRx health questions</h1><p class="lede">Question '+(qi+1)+' of '+c.q.length+' · '+c.name+'</p>'
+          +'<div class="card"><div class="q"><div class="qt">'+item.q+'</div><div class="opts">'+opts+'</div></div></div>'
+          +'<div class="actions"><button class="btn btn-ghost" onclick="prevQ()">Back</button>'
+          +'<button class="btn btn-primary" onclick="nextQ()" '+(state.answers[qi]!==undefined?'':'disabled')+'>'+(qi===c.q.length-1?'Submit to clinician':'Next')+'</button></div>';
+      },
+      review:function(){
+        return '<h1 class="s">Your clinician is reviewing</h1><p class="lede">A licensed TeleRx clinician is reviewing your answers.</p>'
+          +'<div class="card"><div class="reviewing" id="reviewing"><div class="spinner"></div><p>Checking your responses against prescribing criteria…</p></div></div>';
+      },
+      decision:function(){var c=CONDITIONS[condition];
+        if(state.flagged&&!state.liveDone){
+          return '<h1 class="s">A quick live visit is needed</h1>'
+            +'<div class="decision hold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B47A12" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Clinician flagged your intake for a live conversation</div>'
+            +'<div class="card"><div class="clin"><div class="av"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3B37A0" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div><div><div class="cn">Dr. Elena Ruiz, MD</div><div class="cr">TeleRx · family medicine</div></div></div>'
+            +'<div class="chat-bub">Thanks for your answers. One response means I\'d like to talk with you directly before prescribing — it\'ll just take a few minutes.</div></div>'
+            +'<div class="actions"><button class="btn btn-primary btn-block" onclick="startLive()">Start live visit with clinician</button></div>'
+            +'<p class="note">Not everyone is prescribed online — some situations need a real conversation. This still all happens within TeleRx.</p>';
         }
-</style>
-</head>
-
-<body>
-
-<h1>Telehealth Portal</h1>
-<p>Welcome to the telehealth page.</p>
-
-<button onclick="startVisit()">Start Visit</button>
-<button onclick="schedule()">Schedule Appointment</button>
-<button onclick="contact()">Contact Us</button>
-
-<div id="message"></div>
-
-
-<script>
-    function showMessage(content) {
-        const message = document.getElementById("message");
-        message.innerHTML = content;
-        message.style.display = "block";
-    }
-
-    function startVisit() {
-        showMessage(
-            "<h3>Welcome</h3>"
-        );
-    }
-
-    function schedule() {
-        showMessage(
-            "<h3>Appointment confirmed</h3>"
-        );
-    }
-
-    function contact() {
-        showMessage(
-            "<h3>Email: info@example.com</h3>"
-        );
-    }
-</script>
-
-</body>
-</html>
+        var sum=intakeSummary();
+        return '<h1 class="s">'+(state.liveDone?'Cleared after your live visit':'You\'ve been prescribed')+'</h1>'
+          +'<div class="decision ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E8442" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Approved by Dr. Elena Ruiz, MD · TeleRx</div>'
+          +'<div class="rx"><div class="rname">'+c.rx+'</div><div class="rgen">'+c.gen+'</div>'
+          +'<div class="rmeta"><span><b>Dosage:</b> '+c.dose+'</span><span><b>Supply:</b> 30 days</span><span><b>Refills:</b> 3</span></div></div>'
+          +'<div class="card" style="margin-bottom:16px"><h3 style="font-size:15px;color:var(--indigo)">Visit summary (shared with RxMail)</h3>'
+          +'<div class="vitals"><div class="vital"><div class="vl">Allergies</div><div class="vv">'+sum.allergies+'</div></div>'
+          +'<div class="vital"><div class="vl">Conditions</div><div class="vv">'+sum.conditions+'</div></div>'
+          +'<div class="vital"><div class="vl">Other meds</div><div class="vv">'+sum.meds+'</div></div>'
+          +'<div class="vital"><div class="vl">Visit type</div><div class="vv">'+(state.liveDone?'Live consult':'Async review')+'</div></div>'
+          +'<div class="vital"><div class="vl">Visit fee</div><div class="vv">'+(state.pay==='insurance'?'$0 (insurance)':'$'+VISIT_FEE+' cash')+'</div></div></div></div>'
+          +'<div class="actions"><button class="btn btn-green btn-block" onclick="openHandback()">Send to RxMail &amp; continue ▸</button></div>';
+      },
+      live:function(){
+        return '<h1 class="s">Live visit in progress</h1><p class="lede">Connecting you with Dr. Ruiz…</p>'
+          +'<div class="card"><div class="reviewing" id="living"><div class="spinner"></div><p>Secure video visit — this is a simulated placeholder.</p></div></div>';
+      }
+    };
+    
+    var AFTER={
+      review:function(){timers.push(setTimeout(function(){
+        var box=document.getElementById('reviewing');if(!box)return;
+        box.innerHTML='<div class="clin"><div class="av"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3B37A0" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div><div><div class="cn">Dr. Elena Ruiz, MD</div><div class="cr">Reviewed just now</div></div></div>'
+          +'<div class="chat-bub" style="text-align:left">I\'ve finished reviewing your intake. I\'m ready to share my decision.</div>'
+          +'<button class="btn btn-primary btn-block" onclick="go(\'decision\')">See the decision</button>';},2600));},
+      live:function(){timers.push(setTimeout(function(){state.liveDone=true;render('decision');},2600));}
+    };
+    
+    function go(next){render(next);}
+    function startIntake(){qi=0;render('intake');}
+    function answer(i){state.answers[qi]=i;var item=CONDITIONS[condition].q[qi];if(item.flag&&i===item.flag)state.flagged=true;render('intake');}
+    function nextQ(){var c=CONDITIONS[condition];if(qi<c.q.length-1){qi++;render('intake');}else{render('review');}}
+    function prevQ(){if(qi>0){qi--;render('intake');}else{render('verify');}}
+    function startLive(){render('live');}
+    function setPay(m){state.pay=m;render('verify');}
+    
+    var handback=document.getElementById('handback');
+    function openHandback(){handback.classList.add('show');document.body.style.overflow='hidden';handback.querySelector('[data-hbclose]').focus();}
+    function closeHandback(){handback.classList.remove('show');document.body.style.overflow='';}
+    document.querySelectorAll('[data-hbclose]').forEach(function(b){b.addEventListener('click',closeHandback);});
+    handback.addEventListener('click',function(e){if(e.target===handback)closeHandback();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeHandback();});
+    document.getElementById('handbackGo').addEventListener('click',function(){
+      var sum=intakeSummary();
+      var fee=state.pay==='insurance'?0:VISIT_FEE;
+      var q='rx=granted&condition='+encodeURIComponent(condition)
+        +'&al='+encodeURIComponent(sum.allergies)+'&co='+encodeURIComponent(sum.conditions)+'&me='+encodeURIComponent(sum.meds)
+        +'&fee='+fee;
+      location.href='rxmail-app.html?'+q;
+    });
+    
+    render('arrival');
+    </script>
+    
+    
+    </body>
+    </html>
